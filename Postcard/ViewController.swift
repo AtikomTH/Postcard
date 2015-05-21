@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
@@ -30,9 +32,17 @@ class ViewController: UIViewController {
         
         // comment a comment here to test commit
         
+        nameLabel.hidden = false
         messageLabel.hidden = false
+        
+        nameLabel.text = enterNameTextField.text
         messageLabel.text = enterMessageTextField.text
+        
+        nameLabel.textColor = UIColor.blueColor()
         messageLabel.textColor = UIColor.redColor()
+        
+        enterNameTextField.text = ""
+        enterNameTextField.resignFirstResponder()
         
         enterMessageTextField.text = ""
         enterMessageTextField.resignFirstResponder()
